@@ -1,3 +1,4 @@
+/* Flexbox Setup */
 /* CSS Normalize */
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
 input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
@@ -6,22 +7,14 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 html{
-	/*background: #bada55;*/
 	font-family: "Helvetica Neue", sans-serif;
-}
-
-body {
-	/*height: 100%;*/
-	/*background: cyan;*/
-	margin: 0;
-	padding: 0;
 }
 
 .container {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	height: 100vh;
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 	background: lime;
@@ -29,6 +22,8 @@ body {
 
 .header-container{
 	display: flex;
+	flex-grow: 1;
+	flex-basis: 100px;
 	flex-direction: column;
 	justify-content: center;
 	background: red;
@@ -69,9 +64,8 @@ body {
 /* width should change with the browser width */
 .body-container{
 	display: flex;
+	flex: 1; /* just grow as needed*/
 	justify-content: center;
-	min-height: 600px;
-	height: 80vh;
 	width: 70%;
 	background: orange;
 	margin: 0 auto;
@@ -82,8 +76,11 @@ body {
 /* width should shrink/grow depending on page width */
 .game-container {
 	display: flex;
-	width: 250px;
-	height: 250px;
+	flex-grow: 0;
+	flex-basis: 250px;
+	height: 200px;
+	/*width: 250px;
+	height: 250px;*/
 	background: maroon;
 	border: 2px solid white;
 	margin: 20px;
@@ -93,14 +90,15 @@ body {
 /* sticky footer attached to page bottom*/
 .footer-container {
 	display: flex;
+	flex-grow: 1;
+	flex-basis: 50px;
 	justify-content: center;
 	flex-direction: column;
 	/*position: absolute;*/
-	/*bottom: 0;*/
+	bottom: 0;
 	width: 100%;
 	background: blue;
 	height: 50px;
-	height: flex 7; /* what */
 }
 
 .footer-icon-box {
@@ -111,5 +109,4 @@ body {
 	height: 30px;
 	border: 2px solid green;
 	margin: 0 auto;
-	height: flex 1; /* what */
 }
