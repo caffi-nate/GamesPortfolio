@@ -1,3 +1,8 @@
 # singlePageGameGrid
 A single page website showcasing some of my past and present game projects.
-Created as a simple test to brush up on my html/css/javascript skills.
+
+Created to demonstrate general design and skills in
+- HTML5
+- CSS
+- vanilla Javascript
+- Flexbox
