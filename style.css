@@ -51,6 +51,7 @@ p {
 
 .header-nav-bar{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	max-height: 50%;
 	width: 100%;
@@ -77,10 +78,16 @@ p {
 /* games and other downloads section */
 .downloads-container{
 	padding: 50px 0 50px 0;
-	display: grid;
-	grid-gap: 40px;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	display: flex;
+	flex-direction: column;
 	background: orange;
+	max-width: 1000px;
+	margin: 0 auto;
+
+}
+
+.downloads-container > * {
+	border: 3px solid red;
 }
 
 .downloads-container h1 {
@@ -95,12 +102,26 @@ p {
 	margin: 0 auto;
 }
 
-.prototypes-container{
-	padding: 50px 0 50px 0;
+.downloads-container-grid {
 	display: grid;
 	grid-gap: 40px;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.prototypes-container{
+	padding: 50px 0 50px 0;
+	display: flex;
+	flex-direction: column;
+	max-width: 1000px;
+	margin: 0 auto;
 	background: cyan;
+}
+
+.prototypes-container-grid {
+	display: grid;
+	grid-gap: 40px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	border: 3px solid yellow;
 }
 
 .prototypes-container h1 {
@@ -114,6 +135,8 @@ p {
 	grid-column: 1 / -1;
 	margin: 0 auto;
 }
+
+
 
 /* bug: too much text in description area will mess up formatting !! */
 .project-item {
@@ -138,14 +161,11 @@ p {
 /* sticky footer attached to page bottom*/
 .footer-container {
 	display: flex;
-	flex-grow: 0;
-	flex-basis: 50px;
+	flex: 0 1 50px;
 	justify-content: center;
 	flex-direction: column;
-	bottom: 0;
 	width: 100%;
 	background: blue;
-	height: 50px;
 }
 
 .footer-icon-box {
@@ -153,7 +173,11 @@ p {
 	justify-content: center;
 	background: yellow;
 	width: 50%;
-	height: 30px;
 	border: 2px solid green;
 	margin: 0 auto;
+}
+
+.social_media_icon {
+	margin: 0 10px 0 10px;
+	border: 1px solid red;
 }
