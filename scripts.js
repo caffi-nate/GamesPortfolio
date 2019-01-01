@@ -1,17 +1,12 @@
 /* smooth scrolling anchor links */
-function smoothNavigation(e){
-	console.log(e);
-
-	document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault(); // don't snap immediately
-
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-				behavior: 'smooth'
-			});
+document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault(); // don't snap immediately
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth'
 		});
 	});
-}
+});
 
 /* sticky navigation bar */
 const nav = document.querySelector('#main');
@@ -28,4 +23,3 @@ function fixNav() {
 }
 
 window.addEventListener('scroll', fixNav);
-window.addEventListener('mousedown',smoothNavigation);
