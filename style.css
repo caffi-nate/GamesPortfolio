@@ -12,6 +12,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 html{
 	/*font-family: "Helvetica Neue", sans-serif;*/
 	font-family: "Source Sans Pro", sans-serif;
+	color: white;
 }
 
 :root {
@@ -50,7 +51,9 @@ a, a:active, a:focus {
 }
 
 h1{
-
+	text-align: center;
+	font-size: 60px;
+	color: var(--white);
 }
 
 h2 {
@@ -62,10 +65,6 @@ h2 {
 
 h3 {
 	color: var(--orange);
-}
-
-.html {
-	color: var(--white);
 }
 
 .wrapper {
@@ -91,8 +90,8 @@ header {
 }
 
 .title-box {
+	display: flex;
 	border: 2px solid red;
-	height: 100px;
 	width: minmax(1000px, 100vw);
 }
 
@@ -133,13 +132,10 @@ nav li {
 	text-align: center;
 	justify-content: center;
 	align-items: center;
-	
 }
 
 nav a {
 	text-decoration: none;
-	/*padding: 20px;*/
-	/*display: inline-block;*/
 	display:block;
 	color: white;
 	transition: all 0.2s;
@@ -215,15 +211,21 @@ nav li:hover{
 	background: var(--navy);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 	padding: 0px 2px 20px 2px;
+	
 }
 
 .project_description, .project_date {
 	color: var(--skyblue);
 }
 
-.project_artwork {
+.project-item img:before {
+	padding-top: 75%; /* 4:3 Aspect Ratio */
+}
+
+.project-item img {
 	width: 100%;
 	align-self: center;
+	/* debug: background: red;*/
 }
 
 /* audio */
