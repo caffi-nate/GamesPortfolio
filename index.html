@@ -2,47 +2,57 @@
 <html lang = "en">
 	<head>
 		<meta charset = "UTF-8">
-		<title>Single Responsive Page Test</title>
+		<title>Caffinate - Game and Sound Designer</title>
 		<link rel = "stylesheet" href = "style.css">
 	</head>
 	<body>
 		<div class = "wrapper">
-			<div class = "header-container">
-				<div class = "header-nav-bar">
-					<div class = "header-nav-item item1">Games and Downloads</div>
-					<div class = "header-nav-item item2">Prototype Projects</div>
-					<div class = "header-nav-item item3">Audio and Sound Design</div>
+			<header>
+				<div class = "title-box"></div>
+				<div class = "author-description">
+					<p>Hey! I'm a Games Designer from Perth, Australia.
+					<br>Here are some of my past and present projects!</p>
 				</div>
-			</div>
+			</header>
+			<nav id = "main">
+				<ul>
+					<li><a href = "#about">About</a></li>
+					<li><a href = "#games">Games and Downloads</a></li>
+					<li><a href = "#prototypes">Prototype Projects</a></li>
+					<li><a href = "#audio">Audio and Sound Design</a></li>
+					<li><a href = "#contact">Contact</a></li>
+				</ul>
+			</nav>
 
 			<!-- Games and Other Downloads Section -->
 			<div class = "downloads-wrapper">
+				<a id = "games"></a>
 				<div class = "downloads-section">
 					<img class = "section_image" src = "images/ele.gif">
-					<h1>Games and Downloads</h1>
+					<h2>Games and Downloads</h2>
 					<p>Lorem Ipsum Section Description</p>
 					<div class = "downloads-container-grid">
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/mimi_cover.png">
-							<h2>Mimi's Delivery Dash</h2>
+							<h3>Mimi's Delivery Dash</h3>
 							<p class = "project_date">February 2018</p>
 							<p class = "project_description">Movie Game Jam 2018 Entry and Winner</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/bumblerush_cover.png">
-							<h2>Bumblerush</h2>
+							<h3>Bumblerush</h3>
 							<p class = "project_date">November 2018</p>
 							<p class = "project_description">Bootleg Game created for Potluck 7.0</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/genre_mashup_cover.png">
-							<h2>Game Genre Generator</h2>
+							<h3>Game Genre Generator</h3>
 							<p class = "project_date">April 2018</p>
 							<p class = "project_description">Mashup genres quickly for your next game project idea</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/fruiog_cover.png">
-							<h2>Fruiog Fishin'</h2>
+							<h3>Fruiog Fishin'</h3>
 							<p class = "project_date">July 2017</p>
 							<p class = "project_description">Ludum Dare 39 Entry.<br>Theme: Running out of Power</p>
 						</div>
@@ -52,40 +62,41 @@
 
 			<!-- Prototypes Section -->
 			<div class = "prototypes-wrapper">
+				<a id = "prototypes"></a>
 				<div class = "prototypes-section">
 					<img class = "section_image" src = "images/croc.gif">
-					<h1>Prototype Projects</h1>
+					<h2>Prototype Projects</h2>
 					<p>Lorem Ipsum Section Description</p>
 					<div class = "prototypes-container-grid">
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/birdened_cover.png">
-							<h2>Birdened</h2>
+							<h3>Birdened</h3>
 							<p class = "project_date">2016-2018</p>
 							<p class = "project_description">Narrative based Action-Platformer</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/game1.png">
-							<h2>Game Name</h2>
+							<h3>Game Name</h3>
 							<p class = "project_description">Some brief information about this game or prototype project</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/game1.png">
-							<h2>Game Name</h2>
+							<h3>Game Name</h3>
 							<p class = "project_description">Some brief information about this game or prototype project</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/game1.png">
-							<h2>Game Name</h2>
+							<h3>Game Name</h3>
 							<p class = "project_description">Some brief information about this game or prototype project</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/game1.png">
-							<h2>Game Name</h2>
+							<h3>Game Name</h3>
 							<p class = "project_description">Some brief information about this game or prototype project</p>
 						</div>
 						<div class = "project-item">
 							<img class = "project_artwork" src = "images/game1.png">
-							<h2>Game Name</h2>
+							<h3>Game Name</h3>
 							<p class = "project_description">Some brief information about this game or prototype project</p>
 						</div>
 					</div>
@@ -94,8 +105,9 @@
 
 			<!-- todo: new section for game audio commission work etc -->
 			<div class = "game-audio-wrapper">
+				<a id = "audio"></a>
 				<div class = "game-audio-section">
-					<h1>Audio and Sound Design</h1>
+					<h2>Audio and Sound Design</h2>
 					<p>Lorem Ipsum Section Description</p>
 				</div>
 			</div>
@@ -103,6 +115,7 @@
 
 
 			<div class = "footer-container">
+				<a id = "contact"></a>
 				<div class = "footer-icon-box">
 					<img class = "social_media_icon" src = "images/social_media.png">
 					<img class = "social_media_icon" src = "images/social_media.png">
@@ -111,6 +124,25 @@
 			</div>
 		</div>	
 		<script>
+
+			// smooth scrolling anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault(); // don't snap immediately
+
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			});
+
+
+
+
+
+
+
+		
 		</script>
 	</body>
 </html>
