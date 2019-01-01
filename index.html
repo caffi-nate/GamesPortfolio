@@ -16,11 +16,10 @@
 			</header>
 			<nav id = "main">
 				<ul>
-					<li><a href = "#about">About</a></li>
-					<li><a href = "#games">Games and Downloads</a></li>
-					<li><a href = "#prototypes">Prototype Projects</a></li>
-					<li><a href = "#audio">Audio and Sound Design</a></li>
-					<li><a href = "#contact">Contact</a></li>
+					<li><a href = "#games">Downloads</a></li>
+					<li><a href = "#prototypes">Prototypes</a></li>
+					<li><a href = "#audio">Sound Design</a></li>
+					<li><a href = "#contact">Contact Me</a></li>
 				</ul>
 			</nav>
 
@@ -123,26 +122,6 @@
 				</div>
 			</div>
 		</div>	
-		<script>
-
-			// smooth scrolling anchor links
-			document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-				anchor.addEventListener('click', function (e) {
-					e.preventDefault(); // don't snap immediately
-
-					document.querySelector(this.getAttribute('href')).scrollIntoView({
-						behavior: 'smooth'
-					});
-				});
-			});
-
-
-
-
-
-
-
-		
-		</script>
+		<script src = "scripts.js"></script>
 	</body>
 </html>
