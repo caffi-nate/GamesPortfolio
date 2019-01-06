@@ -1,4 +1,6 @@
 /* smooth scrolling anchor links */
+let myVar = 0;
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
 	anchor.addEventListener('click', function (e) {
 		e.preventDefault(); // don't snap immediately
@@ -27,10 +29,11 @@ function startPreviewGif(e){
 	let src = e.currentTarget.querySelector('img').src;
 	const newImage = src.replace(".png", ".gif");
 
-	/* only load a gif if we find it in files*/
-	if (doesFileExist(newImage)){
-		e.currentTarget.querySelector('img').src = newImage;
-	}
+	// can't asyncronous file check anymore after deprecation, try another failsafe later...
+	
+	console.log(doesFileExist(newImage));
+
+	e.currentTarget.querySelector('img').src = newImage;
 }
 
 function stopPreviewGif(e){
@@ -39,20 +42,14 @@ function stopPreviewGif(e){
 	e.currentTarget.querySelector('img').src = newImage;
 }
 
-function doesFileExist(url) {
-	/* TODO: XMLHttpRequest apparently deprecated, find a better method for checking */
-    var xhr = new XMLHttpRequest();
-    xhr.open('HEAD', url, false);
-    xhr.send();
-     
-    if (xhr.status == "404") {
-        return false;
-    } else {
-        return true;
-    }
+function doesFileExist(url){
+	var xhr = new XMLHttpRequest();
+	xhr.open('HEAD', url);
+	xhr.send();
+
+	console.log(xhr);
+	console.log(xhr.status);
 }
-
-
 
 
 window.addEventListener('scroll', fixNav);

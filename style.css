@@ -67,6 +67,17 @@ h3 {
 	color: var(--orange);
 }
 
+img:before {
+	content: ' ';
+	background-image: url(images/broken.png);
+}
+
+.dont-render{
+	position: absolute;
+	height: 0;
+	width: 0;
+}
+
 .wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -102,6 +113,13 @@ header {
 	color: white;
 }
 
+
+
+body.fixed-nav nav {
+	position: fixed;
+	box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
 nav {
 	top: 0;
 	width: 100%;
@@ -111,13 +129,7 @@ nav {
 	background: var(--red);
 }
 
-body.fixed-nav nav {
-	position: fixed;
-	box-shadow: 0 5px 0 rgba(0,0,0,0.1);
-}
-
 nav ul {
-	/*width: minmax(1000px, 100%);*/
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 0;
@@ -128,22 +140,41 @@ nav ul {
 nav li {
 	display:flex;
 	flex: 1;
-	flex-basis: 100px;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
 }
 
 nav a {
+	display: flex;
+	flex: 1;
+	align-items: center;
 	text-decoration: none;
-	display:block;
-	color: white;
+	color: yellow;
 	transition: all 0.2s;
+}
+
+nav a:hover{
+	color: white;
 }
 
 nav li:hover{
 	background: green;
 }
+
+nav span {
+  display: block;
+  flex:1;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.icon {
+	width: 42px;
+	height: 42px;
+	padding: 0;
+	margin: 0 auto;
+	fill: #000000;
+}
+
 
 /* games and other downloads section */
 .downloads-wrapper{
@@ -220,11 +251,17 @@ nav li:hover{
 
 .project-item img:before {
 	padding-top: 75%; /* 4:3 Aspect Ratio */
+	display: block;
+	content: ' ';
+	background-image: url(images/broken.png);
 }
 
 .project-item img {
 	width: 100%;
+	height: 200px;
+	display: block;
 	align-self: center;
+	background-image: url(images/broken.png);
 	/* debug: background: red;*/
 }
 
