@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Source-Sans-Pro');
 
+// colours
+$yellow: #eba14a;
+$orange: #f36a22;
+$red: #992f17;
+$maroon: #441509;
+$navy: #171519;
+$blue: #4f4559;
+$skyblue: #6b7b7a;
+$olive: #484729;
+$white: #e2e5e9;
+
 /* Flexbox Setup */
 /* CSS Normalize */
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
@@ -12,19 +23,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 html{
 	/*font-family: "Helvetica Neue", sans-serif;*/
 	font-family: "Source Sans Pro", sans-serif;
-	color: white;
-}
-
-:root {
-	--yellow: #eba14a;
-	--orange: #f36a22;
-	--red: #992f17;
-	--maroon: #441509;
-	--navy: #171519;
-	--blue: #4f4559;
-	--skyblue: #6b7b7a;
-	--olive: #484729;
-	--white: #e2e5e9;
+	color: $white;
 }
 
 h1,
@@ -43,28 +42,24 @@ p {
 
 a {
 	text-decoration: none;
-	color: yellow;
+	color: $yellow;
+    &:active, &:focus {
+        outline: none;
+    }
 }
-
-a, a:active, a:focus {
-   outline: none;
-}
-
 h1{
 	text-align: center;
 	font-size: 60px;
-	color: var(--white);
+	color: $white;
 }
-
 h2 {
 	grid-column: 1 / -1; /* span entire width */
 	align-self: center;
 	grid-template-columns: 1fr auto 1fr;
 	text-align: center;
 }
-
 h3 {
-	color: var(--orange);
+	color: $orange;
 }
 
 img:before {
@@ -72,6 +67,7 @@ img:before {
 	background-image: url(images/broken.png);
 }
 
+/* SVG graphics initial declaration */
 .dont-render{
 	position: absolute;
 	height: 0;
@@ -90,7 +86,7 @@ img:before {
 
 /* title prior to grid gallery */
 header {
-	background: var(--navy);
+	background: $navy;
 	min-height: 20vh;
 	width: 100%;
 	display: flex;
@@ -98,7 +94,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	
+
 }
 
 .title-box {
@@ -111,7 +107,7 @@ header {
 	display: flex;
 	flex: 1;
 	margin: 0 auto;
-	color: white;
+	color: $white;
 }
 
 body.fixed-nav nav {
@@ -129,46 +125,40 @@ nav {
 	transition: all 0.5s;
 	position: relative;
 	z-index: 1;
-	background: var(--red);
-}
-
-nav ul {
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 0;
-	list-style: none;
-	display: flex;
-}
-
-nav li {
-	display:flex;
-	flex: 1;
-}
-
-nav a {
-	display: flex;
-	flex: 1;
-	align-items: center;
-	text-decoration: none;
-	color: yellow;
-	transition: all 0.2s;
-}
-
-nav a:hover{
-	color: white;
-}
-
-nav li:hover{
-	background: green;
-}
-
-nav span {
-  display: block;
-  flex:1;
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-  fill: green;
+	background: $red;
+    ul {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+    li {
+        display:flex;
+        flex: 1;
+        &:hover{
+            background: $olive;
+        }
+    }
+    a {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        text-decoration: none;
+        color: $yellow;
+        transition: all 0.2s;
+        &:hover{
+            color: $white;
+        }
+    }
+    span {
+        display: block;
+        flex:1;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        fill: $olive;
+    }
 }
 
 .icon {
@@ -178,11 +168,10 @@ nav span {
 	margin: 0 auto;
 }
 
-
 /* games and other downloads section */
 .downloads-wrapper{
 	width: 100%;
-	background: var(--blue);
+	background: $blue;
 }
 
 .downloads-section{
@@ -191,15 +180,13 @@ nav span {
 	flex-direction: column;
 	max-width: 1000px;
 	margin: 0 auto;
-}
-
-.downloads-section > * {
-	color: var(--white);
-}
-
-.downloads-section img {
-	grid-column: 1 / -1;
-	margin: 0 auto;
+    > * {
+        color: $white;
+    }
+    img {
+        grid-column: 1 / -1;
+        margin: 0 auto;
+    }
 }
 
 .downloads-container-grid {
@@ -210,7 +197,7 @@ nav span {
 
 .prototypes-wrapper{
 	width: 100%;
-	background-color: var(--maroon);
+	background-color: $maroon;
 }
 
 .prototypes-section{
@@ -219,10 +206,13 @@ nav span {
 	flex-direction: column;
 	max-width: 1000px;
 	margin: 0 auto;
-}
-
-.prototypes-section > * {
-	color: var(--white);
+    > * a {
+        color: $white;
+    }
+    img {
+        grid-column: 1 / -1;
+        margin: 0 auto;
+    }
 }
 
 .prototypes-container-grid {
@@ -231,47 +221,40 @@ nav span {
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.prototypes-section img {
-	grid-column: 1 / -1;
-	margin: 0 auto;
-}
-
 /* bug: too much text in description area will mess up formatting !! */
 .project-item {
 	display: grid;
 	grid-template-rows: 4fr 32px 20px 32px;
 	grid-gap: 10px;
-	border-color: var(--yellow);
-	background: var(--navy);
+	border-color: $yellow;
+	background: $navy;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-	padding: 0px 2px 20px 2px;	
+	padding: 0px 2px 20px 2px;
+    img {
+        width: 100%;
+        height: 200px;
+        display: block;
+        align-self: center;
+        background-image: url(images/broken.png);
+        /* debug: background: red;*/
+        &:before{
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+            display: block;
+            content: ' ';
+            background-image: url(images/broken.png);
+        }
+    }
 }
 
 .project_description, .project_date {
-	color: var(--skyblue);
-}
-
-.project-item img:before {
-	padding-top: 75%; /* 4:3 Aspect Ratio */
-	display: block;
-	content: ' ';
-	background-image: url(images/broken.png);
-}
-
-.project-item img {
-	width: 100%;
-	height: 200px;
-	display: block;
-	align-self: center;
-	background-image: url(images/broken.png);
-	/* debug: background: red;*/
+	color: $skyblue;
 }
 
 /* audio */
 .game-audio-wrapper {
 	width: 100%;
-	background: var(--blue);
-	color: var(--white);
+	background: $blue;
+	color: $white;
 }
 
 .game-audio-section {
@@ -289,13 +272,13 @@ nav span {
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
-	background: var(--navy);
+	background: $navy;
 }
 
 .footer-icon-box {
 	display: flex;
 	justify-content: center;
-	background: var(--yellow);
+	background: $yellow;
 	width: 50%;
 	margin: 0 auto;
 }
@@ -304,7 +287,6 @@ nav span {
 	margin: 0 10px 0 10px;
 	border: 1px solid red;
 }
-
 
 .divider{
 	width: 100%;
