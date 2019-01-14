@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Source-Sans-Pro');
 
+@import "soundcloud-player";
+
 // colours
 $yellow: #eba14a;
 $orange: #f36a22;
@@ -81,7 +83,7 @@ img:before {
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	background: lime;
+	background: black;
 }
 
 /* title prior to grid gallery */
@@ -94,7 +96,6 @@ header {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-
 }
 
 .title-box {
@@ -146,7 +147,7 @@ nav {
         align-items: center;
         text-decoration: none;
         color: $yellow;
-        transition: all 0.2s;
+        //transition: all 0.2s;
         &:hover{
             color: $white;
         }
@@ -157,7 +158,10 @@ nav {
         text-align: center;
         align-content: center;
         justify-content: center;
-        fill: $olive;
+        fill: $yellow;
+        &:hover{
+            fill: $white;
+        }
     }
 }
 
@@ -174,33 +178,12 @@ nav {
 	background: $blue;
 }
 
-.downloads-section{
-	padding: 50px 0 50px 0;
-	display: flex;
-	flex-direction: column;
-	max-width: 1000px;
-	margin: 0 auto;
-    > * {
-        color: $white;
-    }
-    img {
-        grid-column: 1 / -1;
-        margin: 0 auto;
-    }
-}
-
-.downloads-container-grid {
-	display: grid;
-	grid-gap: 40px;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
 .prototypes-wrapper{
 	width: 100%;
 	background-color: $maroon;
 }
 
-.prototypes-section{
+.projects-section{
 	padding: 50px 0 50px 0;
 	display: flex;
 	flex-direction: column;
@@ -215,10 +198,10 @@ nav {
     }
 }
 
-.prototypes-container-grid {
-	display: grid;
-	grid-gap: 40px;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.projects-container-grid{
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 /* bug: too much text in description area will mess up formatting !! */
@@ -257,14 +240,6 @@ nav {
 	color: $white;
 }
 
-.game-audio-section {
-	padding: 50px 0 50px 0;
-	display: flex;
-	flex-direction: column;
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
 /* sticky footer attached to page bottom*/
 .footer-container {
 	display: flex;
@@ -285,13 +260,19 @@ nav {
 
 .social_media_icon {
 	margin: 0 10px 0 10px;
-	border: 1px solid red;
+	//border: 1px solid red;
+	fill: $olive;
+	&:hover{
+		//color: $white;
+		fill: $white;
+	}
 }
 
-.divider{
+.section-divider{
 	width: 100%;
-	background-image: url("images/dividerTest.png");
-	/*background: lime;*/
+	background-image: url(../images/dividerTest.png);
+    //background:lime;
+    z-index: 1000;
 	height: 32px;
 	background-repeat: repeat-x;
 }

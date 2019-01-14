@@ -1,19 +1,13 @@
 /* smooth scrolling anchor links */
 let myVar = 0;
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-	anchor.addEventListener('click', function (e) {
-		e.preventDefault(); // don't snap immediately
-		document.querySelector(this.getAttribute('href')).scrollIntoView({
-			behavior: 'smooth'
-		});
-	});
-});
-
-/* sticky navigation bar */
 const nav = document.querySelector('#main');
 let topOfNav = nav.offsetTop;
+//console.log(topOfNav);
 
+
+
+/* sticky navigation bar */
 function fixNav() {
   if (window.scrollY >= topOfNav) {
     document.body.style.paddingTop = nav.offsetHeight + 'px';
@@ -24,13 +18,23 @@ function fixNav() {
   }
 }
 
+// smooth scrolling to section
+document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault(); // don't snap immediately
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
+});
+
 /* hover images testing */
 function startPreviewGif(e){
 	let src = e.currentTarget.querySelector('img').src;
 	const newImage = src.replace(".png", ".gif");
 
 	// can't asyncronous file check anymore after deprecation, try another failsafe later...
-	
+
 	console.log(doesFileExist(newImage));
 
 	e.currentTarget.querySelector('img').src = newImage;

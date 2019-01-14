@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Source-Sans-Pro");
+sc-artwork sc-artwork-placeholder-3 {
+  background-image: url(images/croc.gif) !important;
+}
+
+.sc-artwork.sc-artwork-placeholder-3 {
+  background-image: url(images/croc.gif);
+}
+
+.sc-artwork {
+  background-image: url(images/croc.gif);
+}
+
 /* Flexbox Setup */
 /* CSS Normalize */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
@@ -238,7 +250,7 @@ img:before {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: lime;
+  background: black;
 }
 
 /* title prior to grid gallery */
@@ -337,9 +349,6 @@ nav a {
   align-items: center;
   text-decoration: none;
   color: #eba14a;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
 }
 
 nav a:hover {
@@ -357,7 +366,11 @@ nav span {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  fill: #484729;
+  fill: #eba14a;
+}
+
+nav span:hover {
+  fill: #e2e5e9;
 }
 
 .icon {
@@ -373,40 +386,12 @@ nav span {
   background: #4f4559;
 }
 
-.downloads-section {
-  padding: 50px 0 50px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.downloads-section > * {
-  color: #e2e5e9;
-}
-
-.downloads-section img {
-  grid-column: 1 / -1;
-  margin: 0 auto;
-}
-
-.downloads-container-grid {
-  display: grid;
-  grid-gap: 40px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
 .prototypes-wrapper {
   width: 100%;
   background-color: #441509;
 }
 
-.prototypes-section {
+.projects-section {
   padding: 50px 0 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -419,16 +404,16 @@ nav span {
   margin: 0 auto;
 }
 
-.prototypes-section > * a {
+.projects-section > * a {
   color: #e2e5e9;
 }
 
-.prototypes-section img {
+.projects-section img {
   grid-column: 1 / -1;
   margin: 0 auto;
 }
 
-.prototypes-container-grid {
+.projects-container-grid {
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -475,19 +460,6 @@ nav span {
   color: #e2e5e9;
 }
 
-.game-audio-section {
-  padding: 50px 0 50px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
 /* sticky footer attached to page bottom*/
 .footer-container {
   display: -webkit-box;
@@ -521,13 +493,17 @@ nav span {
 
 .social_media_icon {
   margin: 0 10px 0 10px;
-  border: 1px solid red;
+  fill: #484729;
 }
 
-.divider {
+.social_media_icon:hover {
+  fill: #e2e5e9;
+}
+
+.section-divider {
   width: 100%;
-  background-image: url("images/dividerTest.png");
-  /*background: lime;*/
+  background-image: url(../images/dividerTest.png);
+  z-index: 1000;
   height: 32px;
   background-repeat: repeat-x;
 }
