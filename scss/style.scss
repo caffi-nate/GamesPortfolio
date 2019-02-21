@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Source-Sans-Pro');
 
-@import "soundcloud-player";
+//@import "soundcloud-player";
 
 // colours
 $yellow: #eba14a;
@@ -26,6 +26,7 @@ html{
 	/*font-family: "Helvetica Neue", sans-serif;*/
 	font-family: "Source Sans Pro", sans-serif;
 	color: $white;
+	height: 100%;
 }
 
 h1,
@@ -201,6 +202,7 @@ nav {
 .projects-container-grid{
     display: grid;
     grid-gap: 40px;
+	//grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -211,17 +213,19 @@ nav {
 	grid-gap: 10px;
 	border-color: $yellow;
 	background: $navy;
+	//width: 100%;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 	padding: 0px 2px 20px 2px;
     img {
         width: 100%;
-        height: 200px;
+        //height: 250px;
         display: block;
         align-self: center;
         background-image: url(images/broken.png);
+		//background-size: cover;
         /* debug: background: red;*/
         &:before{
-            padding-top: 75%; /* 4:3 Aspect Ratio */
+            //padding-top: 75%; /* 4:3 Aspect Ratio */
             display: block;
             content: ' ';
             background-image: url(images/broken.png);
@@ -241,7 +245,13 @@ nav {
 }
 
 /* sticky footer attached to page bottom*/
-.footer-container {
+.footer {
+	p{
+		width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
 	display: flex;
 	flex: 0 1 50px;
 	justify-content: center;
