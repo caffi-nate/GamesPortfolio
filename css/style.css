@@ -304,6 +304,12 @@ nav {
   background: #992f17;
 }
 
+@media (max-width: 640px) {
+  nav h4 {
+    font-size: 0em;
+  }
+}
+
 nav ul {
   max-width: 1000px;
   margin: 0 auto;
@@ -424,20 +430,34 @@ nav span:hover {
   padding: 0px 2px 20px 2px;
 }
 
-.project-item img {
-  width: 100%;
-  display: block;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
-  background-image: url(images/broken.png);
-  /* debug: background: red;*/
+.project-item .project-image-container {
+  position: relative;
 }
 
-.project-item img:before {
+.project-item .project-image-container .hover-preview-image {
+  position: absolute;
   display: block;
-  content: ' ';
-  background-image: url(images/broken.png);
+  top: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  -webkit-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.project-item .project-image-container .hover-preview-image:hover {
+  opacity: 1;
+}
+
+.project-item .project-image-container.top-image {
+  position: relative;
+}
+
+.project-item img {
+  width: 100%;
+  height: 100%;
 }
 
 .project_description, .project_date {
@@ -471,9 +491,15 @@ nav span:hover {
 }
 
 .footer p {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .footer p {
+    font-size: 0em;
+  }
 }
 
 .footer-icon-box {
@@ -484,6 +510,7 @@ nav span:hover {
   -ms-flex-pack: center;
   justify-content: center;
   background: #eba14a;
+  min-width: 240px;
   width: 50%;
   margin: 0 auto;
 }

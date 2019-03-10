@@ -5,8 +5,6 @@ const nav = document.querySelector('#main');
 let topOfNav = nav.offsetTop;
 //console.log(topOfNav);
 
-
-
 /* sticky navigation bar */
 function fixNav() {
   if (window.scrollY >= topOfNav) {
@@ -58,5 +56,8 @@ function doesFileExist(url){
 
 window.addEventListener('scroll', fixNav);
 const items = document.querySelectorAll('.project-item');
-items.forEach(item => item.addEventListener('mouseover', startPreviewGif));
-items.forEach(item => item.addEventListener('mouseout', stopPreviewGif));
+
+
+// let's do this in pure css now
+//items.forEach(item => item.addEventListener('mouseover', startPreviewGif));
+//items.forEach(item => item.addEventListener('mouseout', stopPreviewGif));
