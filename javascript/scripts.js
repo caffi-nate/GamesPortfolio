@@ -53,11 +53,17 @@ function doesFileExist(url){
 	console.log(xhr.status);
 }
 
-
 window.addEventListener('scroll', fixNav);
-const items = document.querySelectorAll('.project-item');
-
-
-// let's do this in pure css now
-//items.forEach(item => item.addEventListener('mouseover', startPreviewGif));
+//const items = document.querySelectorAll('.project-item');
+const items = document.querySelectorAll('.hover-preview-image');
+// https://stackoverflow.com/questions/10730212/proper-way-to-reset-a-gif-animation-with-displaynone-on-chrome
+// reset an animated gif to start at first image without reloading it from server.
+// Note: if you have the same image on the page more than ones, they all reset.
+function resetGif(e) {
+    var img = e.target;
+    var imageUrl = img.src;
+    img.src = "";
+    img.src = imageUrl;
+};
+items.forEach(item => item.addEventListener('mouseover', resetGif));
 //items.forEach(item => item.addEventListener('mouseout', stopPreviewGif));

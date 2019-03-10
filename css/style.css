@@ -410,28 +410,37 @@ nav span:hover {
 }
 
 .projects-container-grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 40px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.projects-container-grid > * {
+  width: 30%;
+  margin: 6px;
 }
 
 /* bug: too much text in description area will mess up formatting !! */
 .project-item {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 4fr 32px 20px 32px;
-  grid-template-rows: 4fr 32px 20px 32px;
-  grid-gap: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0px 2px 20px 2px;
   border-color: #eba14a;
   background: #171519;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  padding: 0px 2px 20px 2px;
+}
+
+.project-item h3, .project-item p {
+  padding: 10px 10px 0px;
 }
 
 .project-item .project-image-container {
   position: relative;
+  height: 200px;
 }
 
 .project-item .project-image-container .hover-preview-image {

@@ -206,24 +206,42 @@ nav {
 }
 
 .projects-container-grid{
-    display: grid;
-    grid-gap: 40px;
-	//grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // display: grid;
+    // grid-gap: 40px;
+	// //grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	> * {
+		width: 30%;
+		//margin: 10px;
+		margin: 6px;
+	}
+
+
 }
 
 /* bug: too much text in description area will mess up formatting !! */
 .project-item {
-	display: grid;
-	grid-template-rows: 4fr 32px 20px 32px;
-	grid-gap: 10px;
+	// display: grid;
+	// grid-template-rows: 4fr 32px 20px 32px;
+	// grid-gap: 10px;
+	border-radius: 8px;
+	overflow: hidden;
+	//box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	padding: 0px 2px 20px 2px;
 	border-color: $yellow;
 	background: $navy;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-	padding: 0px 2px 20px 2px;
+
+	h3, p {
+		padding: 10px 10px 0px;
+	}
 
 	.project-image-container{
 		position: relative;
+		height: 200px;
 		.hover-preview-image{
 			position: absolute;
 			display: block;
