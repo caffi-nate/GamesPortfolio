@@ -67,3 +67,60 @@ function resetGif(e) {
 };
 items.forEach(item => item.addEventListener('mouseover', resetGif));
 //items.forEach(item => item.addEventListener('mouseout', stopPreviewGif));
+
+
+
+
+
+
+
+/// appear on scroll
+
+// only query every 20 milliseconds
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function(){
+        var context = this, args = arguments;
+        var later = function(){
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
+const sliderImages = document.querySelectorAll('.project-item');
+
+function checkSlide(){
+    //console.log("Scroll Y: ",window.scrollY);
+    console.log("Scroll in at:", window.scrollY + window.innerHeight);
+    sliderImages.forEach(sliderImage => {
+        // halfway through the image
+
+        // clientHeight, offsetHeight, offsetTop, scrollHeight
+        //console.log(sliderImage.offsetTop);
+        const slideInAt = (window.scrollY + 0.9*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
+        //const slideInAt = (window.scrollY - sliderImage.offsetTop);
+
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+
+
+        const isShown = slideInAt > sliderImage.offsetTop;
+        //console.log("hello");
+        //console.log("Slide in At: ", slideInAt);
+        console.log(sliderImage.offsetTop);
+        //if (isHalfShown){
+        if (isShown){
+            sliderImage.classList.add('item-active');
+        }
+    });
+}
+
+window.addEventListener('scroll',checkSlide); // don't debounce but also need to optimise this a bit...
+//window.addEventListener('scroll', debounce(checkSlide));
