@@ -7,58 +7,64 @@
 	</head>
 	<body>
 		<div class = "wrapper">
-			<header>
-				<div class = "title-box">
-					<h1>caffinate</h1>
-				</div>
-				<div class = "author-description">
-					<p>Hey! I'm a Games Designer from Perth, Australia.
-					<br>Here's some of my past and present projects...</p>
-				</div>
-			</header>
-			<nav id = "main">
-				<ul>
-					<li>
-						<a href = "#games">
-							<span>
-								<svg viewBox = "0 0 512 512" class = "icon">
-								<use xlink:href="#downloads-icon"></svg>
-								<h4>Downloads</h4>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href = "#prototypes">
-							<span>
-								<svg viewBox = "0 0 300 300" class = "icon">
-								<use xlink:href="#prototype-icon"></svg>
-								<h4>Prototypes</h4>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href = "#audio">
-							<span>
-								<svg viewBox = "0 0 55 55" class = "icon">
-								<use xlink:href='#sound-icon'>
-								</svg>
-								<h4>Sound Design</h4>
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href = "#contact">
-							<span>
-								<svg viewBox = "0 0 512 512" class = "icon">
-									<use xlink:href='#contact-icon'></svg>
-								<h4>Contact Me</h4>
-							</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+			<section id = "about">
+				<header>
+					<div class = "title-box">
+						<h1>caffinate</h1>
+					</div>
+					<div class = "author-description">
+						<p>Hey! I'm a Games Designer from Perth, Australia.
+						<br>Here's some of my past and present projects...</p>
+					</div>
+					<nav id = "main">
+						<ul>
+							<li>
+								<a href = "#games">
+									<span>
+										<svg viewBox = "0 0 512 512" class = "icon">
+										<use xlink:href="#downloads-icon"></svg>
+										<h4>Downloads</h4>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href = "#prototypes">
+									<span>
+										<svg viewBox = "0 0 300 300" class = "icon">
+										<use xlink:href="#prototype-icon"></svg>
+										<h4>Prototypes</h4>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href = "#audio">
+									<span>
+										<svg viewBox = "0 0 55 55" class = "icon">
+										<use xlink:href='#sound-icon'>
+										</svg>
+										<h4>Sound Design</h4>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href = "#contact">
+									<span>
+										<svg viewBox = "0 0 512 512" class = "icon">
+											<use xlink:href='#contact-icon'></svg>
+										<h4>Contact Me</h4>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			</section>
+
+
+
 			<!-- Games and Other Downloads Section -->
-			<div class = "downloads-wrapper">
+			<section id = "downloads-wrapper">
 				<div class = "section-divider"></div>
 				<a id = "games"></a>
 				<div class = "projects-section">
@@ -113,9 +119,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section> <!-- end downloads-wrapper -->
 			<!-- Prototypes Section -->
-			<div class = "prototypes-wrapper">
+			<section id = "prototypes-wrapper">
 				<div class = "section-divider"></div>
 				<a id = "prototypes"></a>
 				<div class = "projects-section">
@@ -162,10 +168,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section> <!-- end prototypes section -->
 
 			<!-- todo: new section for game audio commission work etc -->
-			<div class = "game-audio-wrapper">
+			<section id = "game-audio-wrapper">
 				<div class = "divider"></div>
 				<a id = "audio"></a>
 				<div class = "projects-section">
@@ -177,9 +183,9 @@
 
 
 				</div>
-			</div>
+			</section>
 
-			<div class = "footer">
+			<section id = "footer">
 				<a id = "contact"></a>
 				<h2>Contact Me</h2>
 				<p>Let's keep in touch! You can find me on any of the platforms below.

@@ -240,17 +240,19 @@ img:before {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: black;
+  background: blue;
 }
 
 /* title prior to grid gallery */
 header {
   background: #171519;
-  min-height: 20vh;
+  min-height: 100vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: center;
+  align-self: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -294,6 +296,7 @@ svg {
 }
 
 nav {
+  height: 70px;
   top: 0;
   width: 100%;
   -webkit-transition: all 0.5s;
@@ -352,6 +355,9 @@ nav a:hover {
 }
 
 nav span {
+  -webkit-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  transition: all 0.15s;
   display: block;
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -367,6 +373,8 @@ nav span {
 
 nav span:hover {
   fill: #e2e5e9;
+  padding-bottom: 10px;
+  margin-top: -10px;
 }
 
 .icon {
@@ -376,13 +384,18 @@ nav span:hover {
   margin: 0 auto;
 }
 
+section {
+  min-height: 100vh;
+}
+
 /* games and other downloads section */
-.downloads-wrapper {
+#downloads-wrapper {
   width: 100%;
   background: #4f4559;
 }
 
-.prototypes-wrapper {
+#prototypes-wrapper {
+  min-height: 100vh;
   width: 100%;
   background-color: #441509;
 }
@@ -429,11 +442,6 @@ nav span:hover {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  -o-transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39), -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
   -webkit-box-flex: 1;
   -ms-flex: 1 1 250px;
   flex: 1 1 250px;
@@ -443,6 +451,22 @@ nav span:hover {
   padding: 0px 2px 20px 2px;
   border-color: #eba14a;
   background: #171519;
+}
+
+.project-item:nth-of-type(even) {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  -o-transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39), -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+}
+
+.project-item:nth-of-type(odd) {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  -o-transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39), -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
 }
 
 .project-item h3, .project-item p {
@@ -491,14 +515,14 @@ nav span:hover {
 }
 
 /* audio */
-.game-audio-wrapper {
+#game-audio-wrapper {
   width: 100%;
   background: #4f4559;
   color: #e2e5e9;
 }
 
 /* sticky footer attached to page bottom*/
-.footer {
+#footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -516,14 +540,14 @@ nav span:hover {
   background: #171519;
 }
 
-.footer p {
+#footer p {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
 @media (max-width: 640px) {
-  .footer p {
+  #footer p {
     font-size: 0em;
   }
 }

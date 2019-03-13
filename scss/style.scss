@@ -84,16 +84,19 @@ img:before {
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	background: black;
+	background: blue;
 }
 
 /* title prior to grid gallery */
 header {
 	background: $navy;
 	//background-color: red;
-	min-height: 20vh;
+	//min-height: 20vh;
+	min-height: 100vh;
 	width: 100%;
 	display: flex;
+	align-self: center;
+	//align-items: center;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -123,6 +126,7 @@ svg {
 }
 
 nav {
+	height: 70px;
 	top: 0;
 	width: 100%;
 	transition: all 0.5s;
@@ -146,6 +150,7 @@ nav {
         flex: 1;
         &:hover{
             background: $olive;
+
         }
     }
     a {
@@ -160,6 +165,7 @@ nav {
         }
     }
     span {
+		transition: all 0.15s;
         display: block;
         flex:1;
         text-align: center;
@@ -168,6 +174,10 @@ nav {
         fill: $yellow;
         &:hover{
             fill: $white;
+			 padding-bottom: 10px;	// go up
+			 margin-top: -10px; 		// go up
+			//margin-bottom: -20px; // go down
+			//padding-top: 20px; // go down
         }
     }
 }
@@ -179,13 +189,18 @@ nav {
 	margin: 0 auto;
 }
 
+section {
+		min-height: 100vh;
+}
+
 /* games and other downloads section */
-.downloads-wrapper{
+#downloads-wrapper{
 	width: 100%;
 	background: $blue;
 }
 
-.prototypes-wrapper{
+#prototypes-wrapper{
+	min-height: 100vh;
 	width: 100%;
 	background-color: $maroon;
 }
@@ -206,25 +221,12 @@ nav {
 }
 
 .projects-container-grid{
-    // display: grid;
-    // grid-gap: 40px;
-	// //grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	display: flex;
 	flex-wrap: wrap;
-
 	justify-content: center;
-	//justify-content: space-around;
-
-
 	> * {
-		//width: 30%;
-		//width: 250px;
-		//margin: 10px;
 		margin: 6px;
 	}
-
-
 }
 
 /* bug: too much text in description area will mess up formatting !! */
@@ -232,15 +234,18 @@ nav {
 	//opacity: 0;
 	transform: scale(0);
 	//transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);// 0.3s;
-	transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);// 0.3s;
+	&:nth-of-type(even) {
+		transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);// 0.3s;
+	}
+	&:nth-of-type(odd){
+		transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);// 0.3s;
+	}
+
+
 	//flex-basis: 250px;
 	//flex-grow: 1;
 	flex: 1 1 250px;
 	max-width: 350px;
-
-	// display: grid;
-	// grid-template-rows: 4fr 32px 20px 32px;
-	// grid-gap: 10px;
 	border-radius: 8px;
 	overflow: hidden;
 	//box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -278,14 +283,6 @@ nav {
 		height: 100%;
 	}
 
-
-
-
-
-
-
-
-
 	// img {
     //     width: 100%;
     //     //height: 250px;
@@ -312,22 +309,20 @@ nav {
 
 
 
-
-
-
 .project_description, .project_date {
 	color: $skyblue;
 }
 
 /* audio */
-.game-audio-wrapper {
+#game-audio-wrapper {
+	//min-height: 100vh;
 	width: 100%;
 	background: $blue;
 	color: $white;
 }
 
 /* sticky footer attached to page bottom*/
-.footer {
+#footer {
 
 	p{
 		max-width: 800px;

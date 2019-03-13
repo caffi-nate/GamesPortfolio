@@ -102,7 +102,7 @@ function checkSlide(){
 
         // clientHeight, offsetHeight, offsetTop, scrollHeight
         //console.log(sliderImage.offsetTop);
-        const slideInAt = (window.scrollY + 0.9*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
+        const slideInAt = (window.scrollY + 0.85*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
         //const slideInAt = (window.scrollY - sliderImage.offsetTop);
 
         // bottom of the image
@@ -121,6 +121,13 @@ function checkSlide(){
         }
     });
 }
+
+// initialise
+window.onload = function(){
+    // pop up the images at the top of the page if they're already in view
+    checkSlide();
+}
+
 
 window.addEventListener('scroll',checkSlide); // don't debounce but also need to optimise this a bit...
 //window.addEventListener('scroll', debounce(checkSlide));
