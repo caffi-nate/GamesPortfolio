@@ -1,8 +1,8 @@
 /* smooth scrolling anchor links */
 let myVar = 0;
 
-const nav = document.querySelector('#main');
-let topOfNav = nav.offsetTop;
+//const nav = document.querySelector('#main');
+//let topOfNav = nav.offsetTop;
 //console.log(topOfNav);
 
 /* sticky navigation bar */
@@ -53,7 +53,7 @@ function doesFileExist(url){
 	console.log(xhr.status);
 }
 
-window.addEventListener('scroll', fixNav);
+//window.addEventListener('scroll', fixNav);
 //const items = document.querySelectorAll('.project-item');
 const items = document.querySelectorAll('.hover-preview-image');
 // https://stackoverflow.com/questions/10730212/proper-way-to-reset-a-gif-animation-with-displaynone-on-chrome

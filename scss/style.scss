@@ -27,6 +27,8 @@ html{
 	font-family: "Source Sans Pro", sans-serif;
 	color: $white;
 	height: 100%;
+	//overflow: hidden;
+	overflow-x: hidden;
 }
 
 h1,
@@ -39,8 +41,9 @@ h6 {
 }
 
 p {
-	margin: 0 0 20px 0;
+	margin: 0 0px 20px 0;
 	font-size: 20px;
+	padding: 10px;
 }
 
 a {
@@ -78,18 +81,19 @@ img:before {
 }
 
 .wrapper {
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	min-height: 100vh;
-	margin: 0;
-	padding: 0;
-	background: blue;
+	// display: flex;
+	// justify-content: space-between;
+	// flex-direction: column;
+	// min-height: 100vh;
+	// margin: 0;
+	// padding: 0;
+	// background: blue;
 }
 
 /* title prior to grid gallery */
 header {
-	background: $navy;
+	//background: $navy;
+	background-color: green;
 	//background-color: red;
 	//min-height: 20vh;
 	min-height: 100vh;
@@ -214,6 +218,11 @@ section {
     > * a {
         color: $white;
     }
+	p {
+		//color: blue;
+		//padding: 10px;
+	}
+
     img {
         grid-column: 1 / -1;
         margin: 0 auto;
@@ -232,15 +241,23 @@ section {
 /* bug: too much text in description area will mess up formatting !! */
 .project-item {
 	//opacity: 0;
+	box-sizing: border-box;
 	transform: scale(0);
+
+
 	//transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);// 0.3s;
 	&:nth-of-type(even) {
+
 		transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);// 0.3s;
+		//transition: all 0.5s;
+		transition: background-color 0.2s;
 	}
 	&:nth-of-type(odd){
-		transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);// 0.3s;
-	}
 
+		transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);// 0.3s;
+		//transition: all 0.5s;
+		transition: background-color 0.2s, color 0.2s;
+	}
 
 	//flex-basis: 250px;
 	//flex-grow: 1;
@@ -249,9 +266,27 @@ section {
 	border-radius: 8px;
 	overflow: hidden;
 	//box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-	padding: 0px 2px 20px 2px;
+	//padding: 0px 2px 20px 2px;
+	padding: 0 0 20px 0;
 	border-color: $yellow;
-	background: $navy;
+	background-color: $navy;
+
+
+	&:hover {
+		//background: $blue; //cyan;
+		background-color: $white;//black;//darken($navy, 25%);
+
+		h3 {
+			color: $navy;//yellow;
+		}
+		//transition: background-color 0.5s;
+
+		// change the image when hovering over entire div
+		.project-image-container .hover-preview-image{
+			opacity: 1;
+		}
+
+	}
 
 	h3, p {
 		padding: 10px 10px 0px;
@@ -268,9 +303,7 @@ section {
 			transition: opacity 0.3s;
 			transition-delay: 0.1s;
 
-			&:hover{
-				opacity: 1;
-			}
+
 		}
 
 		&.top-image{
@@ -369,3 +402,67 @@ section {
 	height: 32px;
 	background-repeat: repeat-x;
 }
+
+
+
+/* Double Diagonal line */
+/* Double Diagonal line */
+/* Common style for pseudo-elements */
+// section {
+// 	box-sizing: border-box;
+// 	position: relative;
+// 	//padding: 10em ;
+// 	//background: $color1;
+// 	//background: red;
+// 	color: #fff;
+// 	text-align: center;
+// 	//border: 1px solid lime;
+// 	//z-index: -1;
+// }
+// section::before,
+// section::after {
+// 	position: absolute;
+// 	content: '';
+// 	//pointer-events: none;
+//
+// }
+//
+// .ss-style-doublediagonal {
+// 	//z-index: 0;
+// 	//padding-top: 6em;
+// 	//background: darken($color1, 11%);
+// 	//background: red;
+// }
+//
+// .ss-style-doublediagonal::before,
+// .ss-style-doublediagonal::after {
+// 	opacity: 0.5;
+// 	top: 0;
+// 	left: -25%;
+// 	z-index: -1;
+// 	width: 150%;
+// 	height: 75%;
+// 	background: orange;//inherit;
+// 	-webkit-transform: rotate(-20deg);
+// 	transform: rotate(-20deg);
+// 	-webkit-transform-origin: 0 0;
+// 	transform-origin: 0 0;
+// }
+//
+// // .ss-style-doublediagonal::before {
+// // 	height: 50%;
+// // 	//background: darken($color1, 15%);
+// // 	background: blue;
+// // 	//-webkit-transform: rotate(-3deg);
+// // 	//transform: rotate(-3deg);
+// // 	-webkit-transform-origin: 3% 0;
+// // 	transform-origin: 3% 0;
+// // }
+// .content-container {
+// 	//z-index: 0;//1;
+// 	width: 100vw;
+// 	height: 100vh;
+// 	// margin-left: -10em;
+// 	// margin-top: -5em;
+// 	//background-color: blue;
+// }
