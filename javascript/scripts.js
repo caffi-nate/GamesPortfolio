@@ -1,4 +1,6 @@
 /* smooth scrolling anchor links */
+console.log("hello world");
+
 let myVar = 0;
 
 //const nav = document.querySelector('#main');
@@ -17,14 +19,14 @@ function fixNav() {
 }
 
 // smooth scrolling to section
-document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-	anchor.addEventListener('click', function (e) {
-		e.preventDefault(); // don't snap immediately
-		document.querySelector(this.getAttribute('href')).scrollIntoView({
-			behavior: 'smooth'
-		});
-	});
-});
+// document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
+// 	anchor.addEventListener('click', function (e) {
+// 		e.preventDefault(); // don't snap immediately
+// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
+// 			behavior: 'smooth'
+// 		});
+// 	});
+// });
 
 /* hover images testing */
 function startPreviewGif(e){
@@ -54,20 +56,22 @@ function doesFileExist(url){
 }
 
 //window.addEventListener('scroll', fixNav);
-//const items = document.querySelectorAll('.project-item');
-const items = document.querySelectorAll('.hover-preview-image');
+const items = document.querySelectorAll('.project-item');
 // https://stackoverflow.com/questions/10730212/proper-way-to-reset-a-gif-animation-with-displaynone-on-chrome
 // reset an animated gif to start at first image without reloading it from server.
 // Note: if you have the same image on the page more than ones, they all reset.
 function resetGif(e) {
-    var img = e.target;
+    const item = e.target.closest('.project-item');
+    const img = item.firstElementChild.getElementsByTagName('img')[1];//closest('.hover-preview-image');
+
     var imageUrl = img.src;
     img.src = "";
     img.src = imageUrl;
 };
-items.forEach(item => item.addEventListener('mouseover', resetGif));
-//items.forEach(item => item.addEventListener('mouseout', stopPreviewGif));
-
+//items.forEach(item => item.addEventListener('mouseenter', resetGif));
+items.forEach(function(item){
+    item.addEventListener('mouseenter', resetGif);
+})
 
 
 
@@ -77,45 +81,36 @@ items.forEach(item => item.addEventListener('mouseover', resetGif));
 /// appear on scroll
 
 // only query every 20 milliseconds
-function debounce(func, wait = 20, immediate = true) {
-    var timeout;
-    return function(){
-        var context = this, args = arguments;
-        var later = function(){
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
+// function debounce(func, wait = 20, immediate = true) {
+//     var timeout;
+//     return function(){
+//         var context = this, args = arguments;
+//         var later = function(){
+//             timeout = null;
+//             if (!immediate) func.apply(context, args);
+//         };
+//         var callNow = immediate && !timeout;
+//         clearTimeout(timeout);
+//         timeout = setTimeout(later, wait);
+//         if (callNow) func.apply(context, args);
+//     };
+// };
 
 const sliderImages = document.querySelectorAll('.project-item');
 
 function checkSlide(){
-    //console.log("Scroll Y: ",window.scrollY);
-    console.log("Scroll in at:", window.scrollY + window.innerHeight);
-    sliderImages.forEach(sliderImage => {
-        // halfway through the image
+    //sliderImages.forEach(sliderImage => {
+    sliderImages.forEach(function(sliderImage){
 
-        // clientHeight, offsetHeight, offsetTop, scrollHeight
-        //console.log(sliderImage.offsetTop);
+
+        // halfway through the image
         const slideInAt = (window.scrollY + 0.85*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
-        //const slideInAt = (window.scrollY - sliderImage.offsetTop);
 
         // bottom of the image
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
         const isHalfShown = slideInAt > sliderImage.offsetTop;
         const isNotScrolledPast = window.scrollY < imageBottom;
-
-
         const isShown = slideInAt > sliderImage.offsetTop;
-        //console.log("hello");
-        //console.log("Slide in At: ", slideInAt);
-        console.log(sliderImage.offsetTop);
-        //if (isHalfShown){
         if (isShown){
             sliderImage.classList.add('item-active');
         }

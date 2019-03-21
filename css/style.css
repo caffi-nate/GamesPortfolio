@@ -373,18 +373,6 @@ section {
   min-height: 100vh;
 }
 
-/* games and other downloads section */
-#downloads-wrapper {
-  width: 100%;
-  background: #4f4559;
-}
-
-#prototypes-wrapper {
-  min-height: 100vh;
-  width: 100%;
-  background-color: #441509;
-}
-
 .projects-section {
   padding: 50px 0 50px 0;
   display: -webkit-box;
@@ -407,7 +395,7 @@ section {
   margin: 0 auto;
 }
 
-.projects-container-grid {
+.projects-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,8 +406,8 @@ section {
   justify-content: center;
 }
 
-.projects-container-grid > * {
-  margin: 6px;
+.projects-container > * {
+  margin: 10px;
 }
 
 /* bug: too much text in description area will mess up formatting !! */
@@ -433,33 +421,26 @@ section {
   -ms-flex: 1 1 250px;
   flex: 1 1 250px;
   max-width: 350px;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
-  padding: 0 0 20px 0;
   border-color: #eba14a;
   background-color: #171519;
 }
 
 .project-item:nth-of-type(even) {
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  -o-transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39), -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  -webkit-transition: background-color 0.2s;
-  -o-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s, -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: background-color 0.2s, -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  -o-transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39), background-color 0.2s;
+  transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39), background-color 0.2s;
+  transition: transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39), background-color 0.2s, -webkit-transform 0.3s cubic-bezier(0.79, 0.76, 0.21, 1.39);
 }
 
 .project-item:nth-of-type(odd) {
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  -o-transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39), -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
-  -webkit-transition: background-color 0.2s, color 0.2s;
-  -o-transition: background-color 0.2s, color 0.2s;
-  transition: background-color 0.2s, color 0.2s;
+  -webkit-transition: background-color 0.2s, -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  transition: background-color 0.2s, -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+  -o-transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39), background-color 0.2s;
+  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39), background-color 0.2s;
+  transition: transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39), background-color 0.2s, -webkit-transform 0.4s cubic-bezier(0.79, 0.76, 0.21, 1.39);
 }
 
 .project-item:hover {
@@ -467,7 +448,7 @@ section {
 }
 
 .project-item:hover h3 {
-  color: #171519;
+  color: #4f4559;
 }
 
 .project-item:hover .project-image-container .hover-preview-image {
@@ -478,9 +459,22 @@ section {
   padding: 10px 10px 0px;
 }
 
+.project-item h3 {
+  color: #f36a22;
+}
+
+.project-item .project-description {
+  font-size: 0.9em;
+}
+
 .project-item .project-image-container {
   position: relative;
   height: 200px;
+}
+
+.project-item .project-image-container img {
+  width: 100%;
+  height: 100%;
 }
 
 .project-item .project-image-container .hover-preview-image {
@@ -500,19 +494,27 @@ section {
   position: relative;
 }
 
-.project-item img {
-  width: 100%;
-  height: 100%;
-}
-
 .project-item.item-active {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.project_description, .project_date {
+.project-description, .project-date {
+  font-size: 0.9em;
   color: #6b7b7a;
+}
+
+/* games and other downloads section */
+#downloads-wrapper {
+  width: 100%;
+  background: #4f4559;
+}
+
+#prototypes-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #441509;
 }
 
 /* audio */
