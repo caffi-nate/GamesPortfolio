@@ -1,5 +1,12 @@
+// webpack test:
+// http://ccoenraets.github.io/es6-tutorial-data/babel-webpack/
+
+
+
 /* smooth scrolling anchor links */
 console.log("hello world");
+
+
 
 let myVar = 0;
 
