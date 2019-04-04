@@ -59,16 +59,22 @@ function checkSlide(){
         var sliderImage = sliderImages[i];
     //sliderImages.forEach(function(sliderImage){
         // halfway through the image
-        const slideInAt = (window.scrollY + 0.85*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
+        //const slideInAt = (window.scrollY + 0.85*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
+
+        const slideInAt = (window.pageYOffset + 0.85*window.innerHeight);
+
+        // console.log(window.innerHeight);
+        // console.log(window.scrollY);
+        // console.log(window.pageYOffset);
 
         // bottom of the image
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
         const isHalfShown = slideInAt > sliderImage.offsetTop;
         const isNotScrolledPast = window.scrollY < imageBottom;
         const isShown = slideInAt > sliderImage.offsetTop;
-        //if (isShown){ // currently not showing up in Internet Explorer...
+        if (isShown){ // currently not showing up in Internet Explorer...
             sliderImage.classList.add('item-active');
-        //}
+        }
     }//);
 }
 
