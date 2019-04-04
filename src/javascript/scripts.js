@@ -1,18 +1,5 @@
-// webpack test:
-// http://ccoenraets.github.io/es6-tutorial-data/babel-webpack/
-
-
-
 /* smooth scrolling anchor links */
-console.log("hello world");
-
-
-
 let myVar = 0;
-
-//const nav = document.querySelector('#main');
-//let topOfNav = nav.offsetTop;
-//console.log(topOfNav);
 
 /* sticky navigation bar */
 function fixNav() {
@@ -25,42 +12,16 @@ function fixNav() {
   }
 }
 
-// smooth scrolling to section
-// document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-// 	anchor.addEventListener('click', function (e) {
-// 		e.preventDefault(); // don't snap immediately
-// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
-// 			behavior: 'smooth'
-// 		});
-// 	});
-// });
+console.log("hello wasfsagfsagorld");
 
-/* hover images testing */
-function startPreviewGif(e){
-	let src = e.currentTarget.querySelector('img').src;
-	const newImage = src.replace(".png", ".gif");
-
-	// can't asyncronous file check anymore after deprecation, try another failsafe later...
-
-	console.log(doesFileExist(newImage));
-
-	e.currentTarget.querySelector('img').src = newImage;
-}
-
-function stopPreviewGif(e){
-	let src = e.currentTarget.querySelector('img').src;
-	const newImage = src.replace(".gif", ".png");
-	e.currentTarget.querySelector('img').src = newImage;
-}
-
-function doesFileExist(url){
-	var xhr = new XMLHttpRequest();
-	xhr.open('HEAD', url);
-	xhr.send();
-
-	console.log(xhr);
-	console.log(xhr.status);
-}
+// function doesFileExist(url){
+// 	var xhr = new XMLHttpRequest();
+// 	xhr.open('HEAD', url);
+// 	xhr.send();
+//
+// 	console.log(xhr);
+// 	console.log(xhr.status);
+// }
 
 //window.addEventListener('scroll', fixNav);
 const items = document.querySelectorAll('.project-item');
@@ -75,41 +36,28 @@ function resetGif(e) {
     img.src = "";
     img.src = imageUrl;
 };
+
+
+
+// this type of forEach isn't supported in IE11: https://stackoverflow.com/questions/53331180/babel-polyfill-being-included-but-foreach-still-doesnt-work-in-ie11-on-nodelis
 //items.forEach(item => item.addEventListener('mouseenter', resetGif));
-items.forEach(function(item){
-    item.addEventListener('mouseenter', resetGif);
-})
+// items.forEach(function(item){
+//     item.addEventListener('mouseenter', resetGif);
+// })
+for (i = 0; i < items.length; i++){
+    items[i].addEventListener('mouseenter', resetGif);
+}
 
-
-
-
-
-
-/// appear on scroll
-
-// only query every 20 milliseconds
-// function debounce(func, wait = 20, immediate = true) {
-//     var timeout;
-//     return function(){
-//         var context = this, args = arguments;
-//         var later = function(){
-//             timeout = null;
-//             if (!immediate) func.apply(context, args);
-//         };
-//         var callNow = immediate && !timeout;
-//         clearTimeout(timeout);
-//         timeout = setTimeout(later, wait);
-//         if (callNow) func.apply(context, args);
-//     };
-// };
+console.log("hello wo2rld");
 
 const sliderImages = document.querySelectorAll('.project-item');
 
 function checkSlide(){
     //sliderImages.forEach(sliderImage => {
-    sliderImages.forEach(function(sliderImage){
 
-
+    for (i = 0; i < sliderImages.length; i++){ // ie fix
+        var sliderImage = sliderImages[i];
+    //sliderImages.forEach(function(sliderImage){
         // halfway through the image
         const slideInAt = (window.scrollY + 0.85*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
 
@@ -118,11 +66,13 @@ function checkSlide(){
         const isHalfShown = slideInAt > sliderImage.offsetTop;
         const isNotScrolledPast = window.scrollY < imageBottom;
         const isShown = slideInAt > sliderImage.offsetTop;
-        if (isShown){
+        //if (isShown){ // currently not showing up in Internet Explorer...
             sliderImage.classList.add('item-active');
-        }
-    });
+        //}
+    }//);
 }
+
+console.log("hello woasfrld");
 
 // initialise
 window.onload = function(){
@@ -133,3 +83,5 @@ window.onload = function(){
 
 window.addEventListener('scroll',checkSlide); // don't debounce but also need to optimise this a bit...
 //window.addEventListener('scroll', debounce(checkSlide));
+
+console.log("hello world");
