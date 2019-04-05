@@ -60,12 +60,7 @@ function checkSlide(){
     //sliderImages.forEach(function(sliderImage){
         // halfway through the image
         //const slideInAt = (window.scrollY + 0.85*window.innerHeight );// - sliderImage.offsetTop;//(window.scrollY + window.innerHeight) - sliderImage.height * 0.5;
-
-        const slideInAt = (window.pageYOffset + 0.85*window.innerHeight);
-
-        // console.log(window.innerHeight);
-        // console.log(window.scrollY);
-        // console.log(window.pageYOffset);
+        const slideInAt = (window.pageYOffset + 0.85*window.innerHeight); // window.pageYOffset is the same as scrollY but works in IE
 
         // bottom of the image
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
@@ -84,6 +79,15 @@ console.log("hello woasfrld");
 window.onload = function(){
     // pop up the images at the top of the page if they're already in view
     checkSlide();
+
+
+    // delay depending on child:
+    const titleWords = document.querySelectorAll('.title-word');
+    console.log(titleWords);
+    titleWords.forEach(titleWord => {
+        titleWord.classList.add("text-in-view");
+    });
+
 }
 
 

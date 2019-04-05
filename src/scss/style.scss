@@ -63,9 +63,13 @@ h2 {
 	align-self: center;
 	grid-template-columns: 1fr auto 1fr;
 	text-align: center;
+	font-size: 3em;
 }
 h3 {
 	color: $orange;
+}
+h4 {
+	font-size: 1em;
 }
 
 img:before {
@@ -81,36 +85,18 @@ img:before {
 }
 
 .wrapper {
-	// display: flex;
-	// justify-content: space-between;
-	// flex-direction: column;
-	// min-height: 100vh;
-	// margin: 0;
-	// padding: 0;
-	// background: blue;
 }
 
 /* title prior to grid gallery */
 header {
-	//background: $navy;
-	background-color: green;
-	//background-color: red;
-	//min-height: 20vh;
-	min-height: 100vh;
+	background: $navy;
 	width: 100%;
-	display: flex;
-	align-self: center;
-	//align-items: center;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
 }
 
 .title-box {
 	display: flex;
-	border: 2px solid red;
-	width: minmax(1000px, 100vw);
+	//border: 2px solid red;
+	//width: minmax(1000px, 100vw);
 }
 
 .author-description {
@@ -150,8 +136,11 @@ nav {
         display: flex;
     }
     li {
+		height: 100%;
         display:flex;
         flex: 1;
+		//background: red;
+		//border: 1px solid red;
         &:hover{
             background: $olive;
 
@@ -178,7 +167,7 @@ nav {
         fill: $yellow;
         &:hover{
             fill: $white;
-			 padding-bottom: 10px;	// go up
+			 padding-bottom: 11px;	// go up
 			 margin-top: -10px; 		// go up
 			//margin-bottom: -20px; // go down
 			//padding-top: 20px; // go down
@@ -194,12 +183,50 @@ nav {
 }
 
 section {
-		min-height: 100vh;
+	height: auto;
+	// padding-top: 20px;
+	// padding-bottom: 20px;
+	//
+	// border: 1px solid red;
+	// box-sizing: border-box;
+	// background: green;
+		//min-height: 100vh;
+}
+
+.title {
+	text-align: center;
+	overflow-y: hidden;
+
+	.title-word {
+		//transition: transform 0.3s;
+		// width: auto;
+		// height: 100%;
+		display: inline-block;
+		transform: translateY(100%);
+		&:nth-of-type(1){
+
+			//transition-delay: 1s;
+			transition: transform 0.3s;// 0.3s;
+			transition-delay: 0.3s;
+
+			color: red;
+		}
+		&:nth-child(2){
+			//transition-delay: 2s;
+			transition: transform 0.3s;
+			color: yellow;
+		}
+
+
+	}
+	.text-in-view {
+		transform: translateY(0%);
+	}
 }
 
 
-@import "projects";
 
+@import "projects";
 
 /* games and other downloads section */
 #downloads-wrapper{
@@ -212,10 +239,6 @@ section {
 	width: 100%;
 	background-color: $maroon;
 }
-
-
-
-
 
 /* audio */
 #game-audio-wrapper {
@@ -276,11 +299,6 @@ section {
 
 .section-image {
 	margin: 0 auto;
-	// border: 1px solid red;
-	// height:auto;
-	// min-height: 1px;
-	// //width:100%;
-	// width: auto;
 	display: block;
 }
 
