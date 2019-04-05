@@ -84,9 +84,11 @@ window.onload = function(){
     // delay depending on child:
     const titleWords = document.querySelectorAll('.title-word');
     console.log(titleWords);
-    titleWords.forEach(titleWord => {
+    //titleWords.forEach(titleWord => {
+    for (i = 0; i < titleWords.length; i++){
+        const titleWord = titleWords[i];
         titleWord.classList.add("text-in-view");
-    });
+    }
 
 }
 
