@@ -14,6 +14,10 @@ $skyblue: #6b7b7a;
 $olive: #484729;
 $white: #e2e5e9;
 
+
+
+$navbackground: #272334;
+
 /* Flexbox Setup */
 /* CSS Normalize */
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
@@ -89,40 +93,62 @@ img:before {
 
 /* title prior to grid gallery */
 header {
+	position: relative;
 	background: $navy;
 	width: 100%;
+	height: 50vh;
+	//overflow: hidden;
+
+	h1 {
+		color: $white;
+	}
+
+	p {
+		color: $skyblue;
+	}
+}
+
+#main {
+	//
 }
 
 .title-box {
-	display: flex;
-	//border: 2px solid red;
-	//width: minmax(1000px, 100vw);
+	// centered in container
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	//border: 1px solid lime;
 }
 
 .author-description {
-	display: flex;
-	flex: 1;
+	// display: flex;
+	// flex: 1;
 	margin: 0 auto;
 	color: $white;
 }
 
-body.fixed-nav nav {
-	position: fixed;
-	box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.5);
-}
+// body.fixed-nav nav {
+// 	position: fixed;
+// 	box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.5);
+// }
 
 svg {
-	fill: var(--skyblue);
+	//fill: $skyblue;//var(--skyblue);
+	// specificity here will override later stuff
 }
 
 nav {
 	height: 70px;
-	top: 0;
+	//top: 0;
 	width: 100%;
 	transition: all 0.5s;
-	position: relative;
+	position: absolute;
+	bottom: 0;//relative;
+	left: 0;
 	z-index: 1;
-	background: $red;
+	background: $navbackground;//$red;
 	h4 {
 		@media (max-width: 640px) {
 			font-size: 0em; // hide on small screens
@@ -133,7 +159,7 @@ nav {
         margin: 0 auto;
         padding: 0;
         list-style: none;
-        display: flex;
+        display: flex; // try to use regular css where possible
     }
     li {
 		height: 100%;
@@ -142,16 +168,15 @@ nav {
 		//background: red;
 		//border: 1px solid red;
         &:hover{
-            background: $olive;
-
+            background: $red;//$olive;
         }
     }
     a {
-        display: flex;
+        display: flex; // try to use regular css
         flex: 1;
         align-items: center;
         text-decoration: none;
-        color: $yellow;
+        color: $skyblue;//yellow;
         //transition: all 0.2s;
         &:hover{
             color: $white;
@@ -164,7 +189,7 @@ nav {
         text-align: center;
         align-content: center;
         justify-content: center;
-        fill: $yellow;
+        fill: $skyblue ;//yellow;
         &:hover{
             fill: $white;
 			 padding-bottom: 11px;	// go up
