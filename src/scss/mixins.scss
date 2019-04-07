@@ -1,0 +1,11 @@
+@mixin selection($color, $background){
+    ::-moz-selection { /* Code for Firefox */
+      color: $color;
+      background: $background;
+    }
+
+    ::selection {
+      color: $color;
+      background: $background;
+    }
+}
