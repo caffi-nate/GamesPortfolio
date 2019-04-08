@@ -59,6 +59,22 @@ module.exports = {
                 },
             },
             {
+                test: /\.ttf$/,                              // for font files, another rule. bugged right now.
+                use: [
+                    {
+                        //loader: "ttf-loader",
+                        loader: "file-loader",
+                        options: {
+                            //outputPath: './Fonts',
+                            //name: "[name].[ext]",
+                            //name: './Fonts/[name].[ext]', // instead of ./font/[hash].[ext]
+                            outputPath: './font',
+                            name: '[name].[ext]',
+                        },
+                    },
+                ]
+            },
+            {
                 test: /\.html$/,
                 use: {
                     loader:'html-loader',

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source-Sans-Pro');
 
 @import "mixins";
+@import "fonts";
 
 //@import "soundcloud-player";
 
@@ -12,14 +13,19 @@ $red: #dd5e71;//#d6566a;//#d35c6e;//#c04f60;//#854581;//#992f17;
 $maroon: #441509;
 $navy: #171519;
 $blue: #4f4559;
-$skyblue: #8c7f99;//#a59ab2;//#c5bdce;//#d0c9d7;//#cab8dd; //6b7b7a;
+$skyblue: #9588a3;//#8c7f99;//#a59ab2;//#c5bdce;//#d0c9d7;//#cab8dd; //6b7b7a;
 $olive: #484729;
 $white: #e2e5e9;
+
+
+$navbackground: #2f2b3e;//#272334;
+
+
 
 //custom style any time the user tries to highlight text, removes background colour
 @include selection($red,rgba(1,1,1,0));
 
-$navbackground: #272334;
+
 
 /* Flexbox Setup */
 /* CSS Normalize */
@@ -52,10 +58,12 @@ h1{
 	font-size: 5em;
 	color: $white;
 	line-height: 0.8em;
+	font-family: "BerlinSans", sans-serif;
 }
 h2 {
 	text-align: center;
 	font-size: 2.5em;
+	font-family: "BerlinSans", sans-serif;
 }
 h3 {
 
