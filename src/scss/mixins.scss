@@ -9,3 +9,24 @@
       background: $background;
     }
 }
+
+// allows us to ensure each row of flexbox has the same width for its items
+//https://stackoverflow.com/questions/23274338/how-to-keep-wrapped-flex-items-the-same-width-as-the-elements-on-the-previous-ro
+// flex container width needs to match viewport size, though... :///
+@mixin flex-wrap-fix($flex-basis, $max-viewport-width: 2000px) {
+  flex-grow: 1;
+  flex-basis: $flex-basis;
+  max-width: 100%;
+
+  $multiplier: 1;
+  $current-width: 0px;
+
+  @while $current-width < $max-viewport-width {
+    $current-width: $current-width + $flex-basis;
+    $multiplier: $multiplier + 1;
+
+    @media(min-width: $flex-basis * $multiplier) {
+      max-width: percentage(1/$multiplier);
+    }
+  }
+}
