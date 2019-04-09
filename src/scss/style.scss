@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Source-Sans-Pro');
+//@import url('https://fonts.googleapis.com/css?family=Source-Sans-Pro');
 
 @import "mixins";
 @import "fonts";
@@ -37,7 +37,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 html{
 	/*font-family: "Helvetica Neue", sans-serif;*/
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Lato", sans-serif;
 	color: $white;
 	height: 100%;
 	//overflow: hidden;
@@ -54,17 +54,17 @@ h6 {
 	margin: 0 0 5px 0;
 }
 h1{
-	text-align: center;
 	font-size: 4em; //5em;
 	color: $white;
 	line-height: 0.8em;
-	font-family: "Fontjek","BerlinSans", sans-serif;
+	font-family: "Fontjek", "BerlinSans", sans-serif;
 	font-weight: normal;
+	text-align: center;
 }
 h2 {
 	text-align: center;
 	font-size: 3em;//2.5em;
-	font-family: "Fontjek","BerlinSans", sans-serif;
+	font-family: "Fontjek", "BerlinSans", sans-serif;
 	font-weight: normal;
 }
 h3 {
@@ -151,17 +151,35 @@ header {
 	//border: 1px solid lime;
 	max-width: 640px;
 	height: auto;
-	border: 1px solid red;
+	//border: 1px solid red;
 }
 
 
 
-#portrait {
+
+#portrait-container {
+	overflow: hidden;
+	position: relative;
 	width: 200px;
 	height: 200px;
 	background-color: $red;
 	margin: 20px auto;
 	border-radius: 50%;
+	&:hover{
+		//background-color: blue;
+		background-color: $yellow;
+		> * {
+			transform: translate(-50%, -50%) scale(1.2);
+		}
+	}
+}
+
+#portrait {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transition: transform 0.15s;
+	transform: translate(-50%,-50%);
 }
 
 .author-description {
