@@ -12,8 +12,6 @@ function fixNav() {
   }
 }
 
-console.log("hello wasfsagfsagorld");
-
 // function doesFileExist(url){
 // 	var xhr = new XMLHttpRequest();
 // 	xhr.open('HEAD', url);
@@ -23,7 +21,7 @@ console.log("hello wasfsagfsagorld");
 // 	console.log(xhr.status);
 // }
 
-//window.addEventListener('scroll', fixNav);
+window.addEventListener('scroll', fixNav);
 const items = document.querySelectorAll('.project-item');
 // https://stackoverflow.com/questions/10730212/proper-way-to-reset-a-gif-animation-with-displaynone-on-chrome
 // reset an animated gif to start at first image without reloading it from server.
@@ -47,14 +45,8 @@ function resetGif(e) {
 for (i = 0; i < items.length; i++){
     items[i].addEventListener('mouseenter', resetGif);
 }
-
-console.log("hello wo2rld");
-
 const sliderImages = document.querySelectorAll('.project-item');
-
 const sectionTitles = document.querySelectorAll('.section-title');
-
-
 
 
 //https://stackoverflow.com/questions/5598743/finding-elements-position-relative-to-the-document
@@ -107,20 +99,16 @@ function checkSlide(){
     }
 }
 
-console.log("hello harold");
-
-
 // initialise
 window.onload = function(){
     // pop up the images at the top of the page if they're already in view
     checkSlide();
 
 
-
+    const portrait = document.querySelector('.portrait');
+    portrait.classList.add('portraitInframe');
 }
 
 
 window.addEventListener('scroll',checkSlide); // don't debounce but also need to optimise this a bit...
 //window.addEventListener('scroll', debounce(checkSlide));
-
-console.log("hello world");

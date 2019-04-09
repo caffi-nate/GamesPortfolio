@@ -24,7 +24,7 @@ $navbackground: #2f2b3e;//#272334;
 
 //custom style any time the user tries to highlight text, removes background colour
 @include selection($red,rgba(1,1,1,0));
-
+//@include selection($red, $navy);
 
 
 /* Flexbox Setup */
@@ -107,28 +107,14 @@ img:before {
 /* title prior to grid gallery */
 #about {
 	background: $navy;
-	// min-height: 80vh;
-	// z-index: 0;
-	// h1 {
-	// 	color: $white;
-	// }
-	//
-	// p {
-	// 	color: $skyblue;
-	// 	font-size: 1.5em;
-	// }
 }
-
 
 header {
 	position: relative;
 	background: $navy;
 	width: 100%;
-	min-height: 60vh;
-	height: auto;
-	//border: 1px solid red;
-	//height: 1000px;
-
+	//min-height: 60vh;
+	//height: auto;
 	z-index: 0;
 
 	h1 {
@@ -144,18 +130,16 @@ header {
 #title-box {
 	// centered in container
 	text-align: center;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	//border: 1px solid lime;
+	margin: 0 auto;
+	//position: absolute;
+	//left: 50%;
+	//top: 50%;
+	//transform: translate(-50%, -50%);
 	max-width: 640px;
 	height: auto;
 	//border: 1px solid red;
+	box-sizing: border-box;
 }
-
-
-
 
 #portrait-container {
 	overflow: hidden;
@@ -166,20 +150,20 @@ header {
 	margin: 20px auto;
 	border-radius: 50%;
 	&:hover{
-		//background-color: blue;
 		background-color: $yellow;
-		> * {
-			transform: translate(-50%, -50%) scale(1.2);
-		}
 	}
 }
 
-#portrait {
+.portrait {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transition: transform 0.15s;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,100%) scale(0.5);
+	transition: transform 0.15s cubic-bezier(0.79, 0.76, 0.21, 1.39);
+	transition-delay: 0.2s;
+}
+.portraitInframe {
+	transform: translate(-50%,-50%) scale(1);
 }
 
 .author-description {
@@ -191,7 +175,6 @@ header {
 nav {
 	height: auto;
 	width: 100%;
-	transition: all 0.5s;
 	position: relative;
 	z-index: 1;
 	background: $navbackground;//$red;
@@ -201,35 +184,31 @@ nav {
 		}
 	}
     ul {
+		text-align: center;
         max-width: 1000px;
         margin: 0 auto;
         padding: 0;
         list-style: none;
-        display: flex; // try to use regular css where possible
+        display: flex; // even sizing, but the fallback is fine.
     }
     li {
-		height: 100%;
-        display:flex;
-        flex: 1;
-		//background: red;
 		//border: 1px solid red;
+		height: 100%;
+        display: inline-block;//flex;
+        flex: 1;
         &:hover{
             background: $red;//$olive;
         }
     }
     a {
-        display: flex; // try to use regular css
-        flex: 1;
-        align-items: center;
         text-decoration: none;
         color: $skyblue;//yellow;
-        //transition: all 0.2s;
         &:hover{
             color: $white;
         }
     }
     span {
-		transition: all 0.15s;
+		transition: transform 0.15s, fill 0.15s;
         display: block;
         flex:1;
         text-align: center;
@@ -238,10 +217,7 @@ nav {
         fill: $skyblue ;//yellow;
         &:hover{
             fill: $white;
-			 padding-bottom: 10px;	// go up
-			 margin-top: -10px; 		// go up
-			//margin-bottom: -20px; // go down
-			//padding-top: 20px; // go down
+			transform: translateY(-10px);
         }
     }
 }
@@ -257,13 +233,10 @@ section {
 	position: relative;
 	height: auto;
 	padding: 50px; // less on small devices
-	// padding-top: 20px;
-	// padding-bottom: 20px;
-	//
-	// border: 1px solid red;
-	// box-sizing: border-box;
-	// background: green;
-		//min-height: 100vh;
+
+	@media (max-width: 640px) {
+		padding: 10px;
+	}
 }
 
 .section-title {
@@ -271,9 +244,6 @@ section {
 	overflow-y: hidden;
 
 	.title-word {
-		//transition: transform 0.3s;
-		// width: auto;
-		// height: 100%;
 		display: inline-block;
 		transform: translateY(100%);
 		&:nth-of-type(1){
@@ -306,22 +276,22 @@ section {
 
 /* games and other downloads section */
 #downloads-wrapper{
-	width: 100%;
 	background: $blue;
 }
 
 #prototypes-wrapper{
 	min-height: 100vh;
-	width: 100%;
 	background-color: $skyblue;//$maroon;
 }
 
 /* audio */
 #game-audio-wrapper {
-	//min-height: 100vh;
-	width: 100%;
 	background: $blue;
 	color: $white;
+}
+
+#tools-wrapper {
+	background: $skyblue;
 }
 
 /* sticky footer attached to page bottom*/
@@ -335,19 +305,14 @@ section {
 			font-size: 0em;
 		}
 	}
-
-	display: flex;
-	flex: 0 1 50px;
-	justify-content: center;
-	flex-direction: column;
 	width: 100%;
 	background: $navy;
 }
 
 .footer-icon-box {
 	text-align: center;
-	min-width: 240px;
 	width: 50%;
+	min-width: 360px;
 	margin: 0 auto;
 }
 
@@ -368,7 +333,6 @@ section {
 .section-divider{
 	width: 100%;
 	background-image: url(../images/dividerTest.png);
-    //background:lime;
     z-index: 1000;
 	height: 32px;
 	background-repeat: repeat-x;
