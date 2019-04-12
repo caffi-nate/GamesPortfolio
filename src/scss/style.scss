@@ -104,14 +104,40 @@ img:before {
 // .wrapper {
 // }
 
+
+#top-stripes {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	//z-index: 100;
+	transform-origin: 0; // top left
+	transform: skewY(-15deg);
+	background-color: $navy;
+}
+
+#top-stripes__bottom {
+	// TODO: add repeating svg pixel border graphic here
+	height: 10%;
+	position: absolute;
+	//opacity: 0.5;
+	bottom: 0;
+	width: 100%;
+	//z-index: 100;
+	background-color: $red;
+}
+
+
 /* title prior to grid gallery */
 #about {
-	background: $navy;
+	//background: $navy;
+	min-height: 120vh;
 }
 
 header {
 	position: relative;
-	background: $navy;
+	//background: $navy;
+	background: $blue; // TEMP: matches next section
 	width: 100%;
 	//min-height: 60vh;
 	//height: auto;
@@ -339,8 +365,11 @@ section {
 }
 
 .section-image {
-	margin: 0 auto;
+	position: absolute;
 	display: block;
+	z-index: 100;
+	left: 50%;
+	transform: translate(-50%,-25vh);
 }
 
 
