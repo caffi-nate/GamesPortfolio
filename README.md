@@ -1,5 +1,5 @@
 # singlePageGameGrid
-<a href ="https://caffi-nate.github.io/singlePageGameGrid/dist/">Live Site Demo</a>
+<a href ="https://caffi-nate.github.io/GamesPortfolio/dist/">Live Site Demo</a>
 A single page website showcasing some of my past and present game projects and prototypes.
 
 Created to practice and demonstrate general design and skills in
