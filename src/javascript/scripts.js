@@ -1,5 +1,7 @@
 /* smooth scrolling anchor links */
-let myVar = 0;
+
+const nav = document.querySelector('#main');
+let topOfNav = nav.offsetTop;//nav.offsetTop;
 
 /* sticky navigation bar */
 function fixNav() {
@@ -12,16 +14,9 @@ function fixNav() {
   }
 }
 
-// function doesFileExist(url){
-// 	var xhr = new XMLHttpRequest();
-// 	xhr.open('HEAD', url);
-// 	xhr.send();
-//
-// 	console.log(xhr);
-// 	console.log(xhr.status);
-// }
-
 window.addEventListener('scroll', fixNav);
+
+
 const items = document.querySelectorAll('.project-item');
 // https://stackoverflow.com/questions/10730212/proper-way-to-reset-a-gif-animation-with-displaynone-on-chrome
 // reset an animated gif to start at first image without reloading it from server.
@@ -35,13 +30,7 @@ function resetGif(e) {
     img.src = imageUrl;
 };
 
-
-
 // this type of forEach isn't supported in IE11: https://stackoverflow.com/questions/53331180/babel-polyfill-being-included-but-foreach-still-doesnt-work-in-ie11-on-nodelis
-//items.forEach(item => item.addEventListener('mouseenter', resetGif));
-// items.forEach(function(item){
-//     item.addEventListener('mouseenter', resetGif);
-// })
 for (i = 0; i < items.length; i++){
     items[i].addEventListener('mouseenter', resetGif);
 }
@@ -50,7 +39,6 @@ const sectionTitles = document.querySelectorAll('.section-title');
 
 
 //https://stackoverflow.com/questions/5598743/finding-elements-position-relative-to-the-document
-// just easier than messing around our old way
 function getCoords(elem) { // crossbrowser version
     var box = elem.getBoundingClientRect();
 
@@ -66,7 +54,6 @@ function getCoords(elem) { // crossbrowser version
     var top  = box.top +  scrollTop - clientTop;
     var left = box.left + scrollLeft - clientLeft;
 
-    //return { top: Math.round(top), left: Math.round(left) };
     return Math.round(top);
 }
 
@@ -80,7 +67,6 @@ function checkSlide(){
             sliderImage.classList.add('item-active');
         }
     }
-
 
     for (j = 0; j < sectionTitles.length; j++){
         const sectionTitle = sectionTitles[j];
@@ -105,10 +91,9 @@ window.onload = function(){
     checkSlide();
 
 
-    const portrait = document.querySelector('.portrait');
-    portrait.classList.add('portraitInframe');
+    // if portrait exists:
+    //const portrait = document.querySelector('.portrait');
+    //portrait.classList.add('portraitInframe');
 }
 
-
 window.addEventListener('scroll',checkSlide); // don't debounce but also need to optimise this a bit...
-//window.addEventListener('scroll', debounce(checkSlide));

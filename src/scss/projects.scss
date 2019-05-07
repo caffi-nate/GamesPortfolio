@@ -21,7 +21,6 @@
 	box-sizing: border-box;
 	transform: scale(0);
 
-
 	h3, p {
 		padding: 10px 10px 0px;
 	}
@@ -78,7 +77,12 @@
 			p {
 				color: white;
 			}
-			height: 50px;
+			h4 {
+				color: $red;
+				padding-left: 8px;
+				padding-top: 4px;
+			}
+			height: 30px;
 		}
 	}
 

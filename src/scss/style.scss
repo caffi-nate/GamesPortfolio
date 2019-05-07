@@ -43,6 +43,7 @@ html{
 	//overflow: hidden;
 	overflow-x: hidden;
 	font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -112,26 +113,31 @@ img:before {
 	overflow: hidden;
 	//z-index: 100;
 	transform-origin: 0; // top left
-	transform: skewY(-15deg);
+	transform: skewY(-10deg);
 	background-color: $navy;
 }
 
 #top-stripes__bottom {
 	// TODO: add repeating svg pixel border graphic here
-	height: 10%;
+	height: 278px;//324px;//243px;//%;
+	//height: 100% norepeat;
 	position: absolute;
 	//opacity: 0.5;
 	bottom: 0;
 	width: 100%;
 	//z-index: 100;
+	height: 10%;
 	background-color: $red;
+	//background-image: url(../images/dither_test6.png);
+
+	//background-image:
 }
 
 
 /* title prior to grid gallery */
 #about {
-	//background: $navy;
-	min-height: 120vh;
+	background: $navy;
+	//min-height: 120vh;
 }
 
 header {
@@ -141,8 +147,7 @@ header {
 	width: 100%;
 	//min-height: 60vh;
 	//height: auto;
-	z-index: 0;
-
+	z-index: 1;
 	h1 {
 		color: $white;
 	}
@@ -161,7 +166,7 @@ header {
 	//left: 50%;
 	//top: 50%;
 	//transform: translate(-50%, -50%);
-	max-width: 640px;
+	max-width: 800px;
 	height: auto;
 	//border: 1px solid red;
 	box-sizing: border-box;
@@ -198,11 +203,18 @@ header {
 	height: auto;
 }
 
+body.fixed-nav nav {
+  position: fixed;
+  top: 0;
+}
+
 nav {
-	height: auto;
+	//height: auto;
+	height: 70px;
 	width: 100%;
 	position: relative;
-	z-index: 1;
+	transition: all 0.5s;
+	z-index: 1000;
 	background: $navbackground;//$red;
 	h4 {
 		@media (max-width: 640px) {
@@ -211,7 +223,7 @@ nav {
 	}
     ul {
 		text-align: center;
-        max-width: 1000px;
+        max-width: 800px;
         margin: 0 auto;
         padding: 0;
         list-style: none;
@@ -231,19 +243,20 @@ nav {
         color: $skyblue;//yellow;
         &:hover{
             color: $white;
+			text-shadow: 0px 2px 0px $red;
         }
     }
     span {
 		transition: transform 0.15s, fill 0.15s;
         display: block;
-        flex:1;
+        flex: 1;
         text-align: center;
         align-content: center;
         justify-content: center;
         fill: $skyblue ;//yellow;
         &:hover{
             fill: $white;
-			transform: translateY(-10px);
+			transform: translateY(10px);
         }
     }
 }
@@ -306,6 +319,17 @@ section {
 }
 
 #prototypes-wrapper{
+	padding: 0;
+	// &:before {
+	// 	content: "";
+	// 	height: 50%;
+	// 	width: 100%;
+	// 	top: 0;
+	// 	position: absolute;
+	// 	background-color: red;//$skyblue;
+	// 	transform: skewY(-12deg);// translateY(-40%);// translateY(-50%);
+	// }
+
 	min-height: 100vh;
 	background-color: $skyblue;//$maroon;
 }
@@ -314,6 +338,27 @@ section {
 #game-audio-wrapper {
 	background: $blue;
 	color: $white;
+	text-align: center;
+	p {
+		color: $skyblue;
+	}
+	iframe {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		display: block;
+		padding-top: 10px;
+		border-radius: 10px 10px 20px 20px !important;
+		//padding-bottom: 10px;
+	}
+	h3 {
+		color: $skyblue;
+		background-color: black;
+		width: 100%;
+		//padding-top: 10px;
+		padding: 10px;
+		border-radius: 0px 0px 4px 4px;
+	}
 }
 
 #tools-wrapper {
@@ -365,12 +410,28 @@ section {
 }
 
 .section-image {
-	position: absolute;
+	//position: absolute;
+
 	display: block;
 	z-index: 100;
-	left: 50%;
-	transform: translate(-50%,-25vh);
+	//left: 50%;
+	//transform: translate(-50%,-25vh);
+
+	position: relative;
+	margin: 0 auto;
 }
+
+
+.content-area {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	//background-color: gray;
+}
+
+
+
+
 
 
 /* Double Diagonal line */
