@@ -1,7 +1,7 @@
 /* smooth scrolling anchor links */
 
-const nav = document.querySelector('#main');
-let topOfNav = nav.offsetTop;//nav.offsetTop;
+var nav = document.querySelector('#main');
+var topOfNav = nav.offsetTop;//nav.offsetTop;
 
 /* sticky navigation bar */
 function fixNav() {
@@ -15,7 +15,6 @@ function fixNav() {
 }
 
 window.addEventListener('scroll', fixNav);
-
 
 const items = document.querySelectorAll('.project-item');
 // https://stackoverflow.com/questions/10730212/proper-way-to-reset-a-gif-animation-with-displaynone-on-chrome
